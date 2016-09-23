@@ -16,7 +16,7 @@
 
 @keyframes text {
   0%{
-    transform: translateX(-192px);
+    transform: translateX(-192px) translateY(-20px);
     @include opacity(0);
   }100%{
        @include opacity(1);
@@ -26,9 +26,68 @@
 
 @-webkit-keyframes text {
   0%{
-    transform: translateX(-192px);
+    transform: translateX(-192px) translateY(-20px);
     @include opacity(0);
   }100%{
+     @include opacity(1);
+   }
+}
+
+@keyframes thanks {
+  0%{
+    transform: translateY(100px);
+    @include opacity(0);
+  }100%{
+     @include opacity(1);
+   }
+}
+
+
+@-webkit-keyframes thanks {
+  0%{
+    transform: translateY(100px);
+    @include opacity(0);
+  }100%{
+     @include opacity(1);
+   }
+}
+
+@keyframes withyou {
+  0%{
+    transform: translateY(100px);
+    @include opacity(0);
+  }100%{
+     @include opacity(1);
+   }
+}
+
+
+@-webkit-keyframes withyou {
+  0%{
+    transform: translateY(100px);
+    @include opacity(0);
+  }100%{
+     @include opacity(1);
+   }
+}
+
+@keyframes arrow {
+  0%{
+    transform: translateY(0px);
+    @include opacity(0);
+  }100%{
+     transform: translateY(-50px);
+     @include opacity(1);
+   }
+}
+
+
+@-webkit-keyframes arrow {
+  0%{
+    transform: translateY(0px);
+    @include opacity(0);
+  }100%{
+     transform: translateY(-50px);
      @include opacity(1);
    }
 }

@@ -47,19 +47,20 @@ section{
   @include center(428px, 428px);
   .rocket{
     @include set-main-page-1(165px, 195px, "../../images/rocket.png", -29px, 48px);
-    @include animation(rocket 1s);
+    @include animation(rocket 1s forwards);
   }
   .thanks{
     @include set-main-page-1(396px, 227px, "../../images/thanks-2.png", 43px, 48px);
+    @include animation(thanks 1s forwards);
   }
   .withyou{
     @include set-main-page-1(365px, 133px, "../../images/withyou.png", 208px, 38px);
+    @include animation(withyou 1s);
   }
   .text-1{
     @include set-main-page-1(192px, 83px, "../../images/text-1.png", -7px, 209px);
     @include opacity(0);
-    @include animation(text 1s);
-    @include animation-delay(1s);
+    @include animation(text 1s 1s forwards);
   }
 }
 
@@ -70,4 +71,6 @@ section{
   position: $psa;
   @include horizon-center(90px);
   bottom: 40px;
+  @include opacity(0);
+  @include animation(arrow 1s infinite);
 }

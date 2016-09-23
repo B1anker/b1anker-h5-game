@@ -1,0 +1,33 @@
+$prt: 100%;
+$psa: absolute;
+$psr: relative;
+
+@mixin horizon-center($width){
+  left: 50%;
+  margin-left: -($width/2);
+}
+
+@mixin vertical-center($height){
+  top: 50%;
+  margin-top: -($height/2);
+}
+
+@mixin radius($r){
+  @include border-radius($r);
+}
+
+
+@mixin center($width, $height){
+  @include horizon-center($width);
+  @include vertical-center($height);
+}
+
+
+@mixin set-main-page-1($width, $height, $url, $top, $left){
+  background: url($url) no-repeat;
+  width: $width;
+  height: $height;
+  position: $psa;
+  top: $top;
+  left: $left;
+}

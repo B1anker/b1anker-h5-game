@@ -1,0 +1,73 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "normalize";
+@import "compass/css3";
+@import "mixin";
+@import "animation";
+section{
+  width: $prt;
+  height: $prt;
+  position: $psr;
+}
+
+.bg-color{
+  background-color: #2d4081;
+}
+
+.bg-star{
+  background: url("../../images/star.png") no-repeat;
+  background-size: cover;
+  position: $psa;
+  height: $prt;
+  width: $prt;
+}
+
+.bg-page1{
+  width: 428px;
+  height: 428px;
+  border: 1px solid rgb(35, 60, 101);
+  background-color: #233264;
+  position: $psa;
+  @include center(428px, 428px);
+  @include radius(50%);
+  box-shadow: 0 0 0 113px #283972, 0 0 0 114px #223161,0 0 0 193px #2a3d79,0 0 0 194px #273971,0 0 0 254px #2c3f7e,0 0 0 255px #2a3c79;
+}
+
+.main-page-1{
+  width: 428px;
+  height: 428px;
+  position: $psa;
+  top: 50%;
+  left: 50%;
+}
+
+.main-page-1{
+  @include center(428px, 428px);
+  .rocket{
+    @include set-main-page-1(165px, 195px, "../../images/rocket.png", -29px, 48px);
+    @include animation(rocket 1s);
+  }
+  .thanks{
+    @include set-main-page-1(396px, 227px, "../../images/thanks-2.png", 43px, 48px);
+  }
+  .withyou{
+    @include set-main-page-1(365px, 133px, "../../images/withyou.png", 208px, 38px);
+  }
+  .text-1{
+    @include set-main-page-1(192px, 83px, "../../images/text-1.png", -7px, 209px);
+    @include opacity(0);
+    @include animation(text 1s);
+    @include animation-delay(1s);
+  }
+}
+
+.arrow{
+  width: 90px;
+  height: 65px;
+  background: url("../../images/arrow.png") no-repeat;
+  position: $psa;
+  @include horizon-center(90px);
+  bottom: 40px;
+}

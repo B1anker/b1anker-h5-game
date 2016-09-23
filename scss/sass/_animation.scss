@@ -1,0 +1,34 @@
+@keyframes rocket{
+  0%{
+    transform: translateX(-200px) translateY(100px);
+  }100%{
+
+     }
+}
+
+@-webkit-keyframes rocket{
+  0%{
+    transform: translateX(-200px) translateY(100px);
+  }100%{
+
+   }
+}
+
+@keyframes text {
+  0%{
+    transform: translateX(-192px);
+    @include opacity(0);
+  }100%{
+       @include opacity(1);
+     }
+}
+
+
+@-webkit-keyframes text {
+  0%{
+    transform: translateX(-192px);
+    @include opacity(0);
+  }100%{
+     @include opacity(1);
+   }
+}

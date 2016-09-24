@@ -1,8 +1,9 @@
 @keyframes rocket{
   0%{
     transform: translateX(-200px) translateY(100px);
+    @include opacity(0);
   }100%{
-
+       @include opacity(1);
      }
 }
 
@@ -13,6 +14,25 @@
 
    }
 }
+
+@keyframes rocket-out{
+  0%{
+
+    @include opacity(0);
+  }100%{
+     transform: translateX(200px) translateY(-200px);
+     @include opacity(1);
+   }
+}
+
+@-webkit-keyframes rocket-out{
+  0%{
+    transform: translateX(-200px) translateY(100px);
+  }100%{
+
+   }
+}
+
 
 @keyframes text {
   0%{

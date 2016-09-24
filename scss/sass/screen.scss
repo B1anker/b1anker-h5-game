@@ -46,21 +46,20 @@ section{
 .main-page-1{
   @include center(428px, 428px);
   .rocket{
+    @include opacity(0);
     @include set-main-page-1(165px, 195px, "../../images/rocket.png", -29px, 48px);
-    @include animation(rocket 1s forwards);
   }
   .thanks{
+    @include opacity(0);
     @include set-main-page-1(396px, 227px, "../../images/thanks-2.png", 43px, 48px);
-    @include animation(thanks 1s forwards);
   }
   .withyou{
+    @include opacity(0);
     @include set-main-page-1(365px, 133px, "../../images/withyou.png", 208px, 38px);
-    @include animation(withyou 1s);
   }
   .text-1{
-    @include set-main-page-1(192px, 83px, "../../images/text-1.png", -7px, 209px);
     @include opacity(0);
-    @include animation(text 1s 1s forwards);
+    @include set-main-page-1(192px, 83px, "../../images/text-1.png", -7px, 209px);
   }
 }
 
@@ -73,4 +72,35 @@ section{
   bottom: 40px;
   @include opacity(0);
   @include animation(arrow 1s infinite);
+}
+
+
+.section-in .main-page-1{
+  .rocket{
+    @include animation(rocket 1s forwards);
+  }
+  .thanks{
+    @include animation(thanks 1s forwards);
+  }
+  .withyou{
+    @include animation(withyou 1s);
+  }
+  .text-1{
+    @include animation(text 1s 1s forwards);
+  }
+}
+
+.section-out .main-page-1{
+  .rocket{
+    @include animation(rocket 1s forwards);
+  }
+  .thanks{
+    @include animation(thanks 1s forwards);
+  }
+  .withyou{
+    @include animation(withyou 1s);
+  }
+  .text-1{
+    @include animation(text 1s 1s forwards);
+  }
 }

@@ -1,6 +1,11 @@
 
-.idea/workspace.xml
 
 *.xml
 
+.DS_Store
+
+*.scssc
+
 .idea/workspace.xml
+
+scss/*

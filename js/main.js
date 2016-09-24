@@ -20,5 +20,10 @@ $(document).ready(function(){
 		}else{
 			alert('click');
 		}
-	})
+	});
+
+	setTimeout(function(){
+		$('.bg-color').addClass('section-in');
+	}, 2000)
+
 });

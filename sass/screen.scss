@@ -83,7 +83,7 @@ section{
     @include animation(thanks 1s forwards);
   }
   .withyou{
-    @include animation(withyou 1s);
+    @include animation(withyou 1s forwards);
   }
   .text-1{
     @include animation(text 1s 1s forwards);

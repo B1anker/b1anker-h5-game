@@ -2,10 +2,6 @@
  * Created by b1anker on 16/9/24.
  */
 
-
-
-
-
 (function($){
 
 	var GamePage = function(ele, options){
@@ -182,8 +178,9 @@
 				jc.image(img, pX, pY, width, height).id('die' + id).level(1);
 				jc.start('game');
 			};
-
+			//点击怪物死亡
 			jc('#' + id).del();
+			//死亡图片消失特效
 			var disappear = 1;
 			var disappearTimer = setInterval(function(){
 				disappear -= 1/60;
@@ -209,8 +206,8 @@
 		monsters = {};
 		self.position = {};
 		$(document).off('touchstart');
-		self.drawMonsters();
 		self.interval();
+		self.drawMonsters();
 	};
 
 	GamePage.prototype.interval = function(){
@@ -225,11 +222,22 @@
 
 		self.gameOverTimer = setTimeout(function(){
 			clearInterval(self.timeTimer);
-			alert('游戏结束');
+			clearTimeout(self.gameOverTimer);
 			for(var a in monsters){
-				monsters[a].del();
-				monsters[a] = undefined;
+				jc('#' + a).del();
+				monsters[a] = null;
 			}
+			self.score = 0;
+			self.turns = 0;
+			monsters = {};
+			self.position = {};
+			$(document).off('touchstart');
+			$('.final-score').html('你消灭了' + $('.score').html().match(/\d+/)[0] + '只怪物!');
+			$('.alert').show('slow');
+			$('#again').on('touchstart', function(){
+				$('.alert').hide('slow');
+				self.next();
+			});
 		}, self.time * 1000);
 	};
 
@@ -248,6 +256,11 @@
 						self.killMonster(id, timer, pX, pY);
 						self.score++;
 						$('.score').html('X' + self.score);
+					}else{
+						$('.bg-color').addClass('shake');
+						setTimeout(function(){
+							$('.bg-color').removeClass('shake');
+						}, 1000);
 					}
 				}
 			});
@@ -255,10 +268,6 @@
 
 	GamePage.prototype.monsterMove = function(id){
 		var self = this;
-
-
-
-
 		var position = self.generatePosition();
 		var radiu = self.randomNumber(100, 200);
 		var angle = self.randomNumber(0, 360);
@@ -272,8 +281,6 @@
 		}, self.timerSpeed);
 
 		self.bindTouch(id, timer);
-
-
 	};
 
 
@@ -294,7 +301,7 @@
 			x: self.width - 120,
 			y: self.height - 160
 		};
-		self.time = 10;
+		self.time = 5;
 		self.roundTime = 10000;
 		self.timerSpeed = 30;
 		self.speed = 6;
@@ -324,7 +331,7 @@
 
 $(document).ready(function(){
 
-
+	$(document.body).css('height', $(document).height());
 	$('#music').on('touchstart', function () {
 		var $audio = $('audio');
 		var audio = $audio.get(0);
@@ -339,7 +346,6 @@ $(document).ready(function(){
 
 
 	$('#game').GamePage();
-
 });
 
 

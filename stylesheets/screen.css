@@ -516,6 +516,76 @@ th {
     transform: rotate(360deg);
   }
 }
+@keyframes shake {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  10% {
+    transform: translateX(-2px) translateY(2px);
+  }
+  20% {
+    transform: translateX(2px) translateY(-2px);
+  }
+  30% {
+    transform: translateX(-3px) translateY(-3px);
+  }
+  40% {
+    transform: translateX(3px) translateY(3px);
+  }
+  50% {
+    transform: translateX(-4px) translateY(-4px);
+  }
+  60% {
+    transform: translateX(4px) translateY(4px);
+  }
+  70% {
+    transform: translateX(-5px) translateY(-5px);
+  }
+  80% {
+    transform: translateX(5px) translateY(5px);
+  }
+  90% {
+    transform: translateX(6px) translateY(-6px);
+  }
+  100% {
+    transform: translateX(-6px) translateY(6px);
+  }
+}
+@-webkit-keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg);
+  }
+  20% {
+    transform: rotate(360deg);
+  }
+  30% {
+    transform: rotate(360deg);
+  }
+  40% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  60% {
+    transform: rotate(360deg);
+  }
+  70% {
+    transform: rotate(360deg);
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  90% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* line 9, ../sass/screen.scss */
 section {
   width: 100%;
@@ -780,7 +850,54 @@ section {
 /* line 191, ../sass/screen.scss */
 .time {
   width: 180px;
+  margin-left: 50px;
   background: url("../images/time.png") 0px 16px no-repeat;
   color: #ffe400;
   text-indent: 56px;
+}
+
+/* line 200, ../sass/screen.scss */
+.shake {
+  -moz-animation: shake 1s;
+  -webkit-animation: shake 1s;
+  animation: shake 1s;
+}
+
+/* line 204, ../sass/screen.scss */
+.alert {
+  position: absolute;
+  width: 424px;
+  height: 489px;
+  background: url("../images/alert.png") no-repeat;
+  display: none;
+  z-index: 9999;
+  left: 50%;
+  margin-left: -212px;
+  top: 50%;
+  margin-top: -244.5px;
+}
+/* line 212, ../sass/screen.scss */
+.alert .final-score, .alert #again {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+/* line 217, ../sass/screen.scss */
+.alert .final-score {
+  margin-top: 250px;
+}
+/* line 220, ../sass/screen.scss */
+.alert #again {
+  display: block;
+  width: 90%;
+  height: 50px;
+  margin: 0 auto;
+  background-color: rgba(255, 0, 0, 0.5);
+  border: none;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 0px 8px rgba(90, 90, 90, 0.5);
+  -webkit-box-shadow: 0px 0px 8px rgba(90, 90, 90, 0.5);
+  box-shadow: 0px 0px 8px rgba(90, 90, 90, 0.5);
 }

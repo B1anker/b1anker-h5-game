@@ -13,10 +13,14 @@
     <div class="bg-game"></div>
     <div class="bar">
         <div class="score">X0</div>
-        <div class="time">10S</div>
+        <div class="time"></div>
         <div class="music play" id="music">
-            <!--<audio src="audio/music.mp3" preload="auto" autoplay="true"></audio>-->
+            <audio src="audio/music.mp3" preload="auto"></audio>
         </div>
+    </div>
+    <div class="alert">
+        <p class="final-score"></p>
+        <button id="again">再来一次</button>
     </div>
     <canvas id="game" style="position: absolute;z-index: 3"></canvas>
     <script src="js/game.js"></script>

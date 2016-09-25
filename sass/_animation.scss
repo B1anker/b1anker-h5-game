@@ -11,25 +11,25 @@
   0%{
     transform: translateX(-200px) translateY(100px);
   }100%{
-
+     @include opacity(1);
    }
 }
 
 @keyframes rocket-out{
   0%{
-
-    @include opacity(0);
+    @include opacity(1);
   }100%{
      transform: translateX(200px) translateY(-200px);
-     @include opacity(1);
+     @include opacity(0);
    }
 }
 
 @-webkit-keyframes rocket-out{
   0%{
-    transform: translateX(-200px) translateY(100px);
+    @include opacity(1);
   }100%{
-
+     transform: translateX(200px) translateY(-200px);
+     @include opacity(0);
    }
 }
 
@@ -53,6 +53,23 @@
    }
 }
 
+@keyframes text-out {
+  0%{
+    @include opacity(1);
+  }100%{
+     @include opacity(0);
+   }
+}
+
+
+@-webkit-keyframes text-out {
+  0%{
+    @include opacity(1);
+  }100%{
+     @include opacity(0);
+   }
+}
+
 @keyframes thanks {
   0%{
     transform: translateY(100px);
@@ -69,6 +86,23 @@
     @include opacity(0);
   }100%{
      @include opacity(1);
+   }
+}
+
+@keyframes thanks-out {
+  0%{
+  }100%{
+     @include opacity(0);
+     transform: translateY(100px);
+   }
+}
+
+
+@-webkit-keyframes thanks-out {
+  0%{
+  }100%{
+     @include opacity(0);
+     transform: translateY(100px);
    }
 }
 
@@ -91,14 +125,71 @@
    }
 }
 
+@keyframes withyou-out {
+  0%{
+  }100%{
+     @include opacity(0);
+     transform: translateY(100px);
+   }
+}
+
+
+@-webkit-keyframes withyou-out {
+  0%{
+  }100%{
+     @include opacity(0);
+     transform: translateY(100px);
+   }
+}
+
+@keyframes circle-out {
+  0%{
+    @include opacity(1);
+  }100%{
+     @include opacity(0);
+     transform: translateY(100px);
+   }
+}
+
+
+@-webkit-keyframes circle-out {
+  0%{
+    @include opacity(1);
+  }100%{
+     @include opacity(0);
+     transform: translateY(100px);
+   }
+}
+
+
+@keyframes star-out {
+  0%{
+    @include opacity(1);
+  }100%{
+     @include opacity(0);
+   }
+}
+
+
+@-webkit-keyframes star-out {
+  0%{
+    @include opacity(1);
+  }100%{
+     @include opacity(0);
+   }
+}
+
+
 @keyframes arrow {
   0%{
     transform: translateY(0px);
     @include opacity(0);
-  }100%{
-     transform: translateY(-50px);
+  }50%{
      @include opacity(1);
-   }
+   }100%{
+      transform: translateY(-50px);
+      @include opacity(0);
+  }
 }
 
 
@@ -106,8 +197,27 @@
   0%{
     transform: translateY(0px);
     @include opacity(0);
+  }50%{
+    @include opacity(1);
   }100%{
-     transform: translateY(-50px);
-     @include opacity(1);
-   }
+    transform: translateY(-50px);
+    @include opacity(0);
+  }
+}
+
+@keyframes music {
+  0%{
+    transform: rotate(0deg);
+  }100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+@-webkit-keyframes music {
+  0%{
+    transform: rotate(0deg);
+  }100%{
+     transform: rotate(360deg);
+  }
 }

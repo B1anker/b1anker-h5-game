@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="stylesheets/screen.css">
+    <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jCanvas.min.js"></script>
+</head>
+<body class="bg-color">
+    <div class="bg-page-1"></div>
+    <div class="bg-game"></div>
+    <div class="bar">
+        <div class="score">X0</div>
+        <div class="time">10S</div>
+        <div class="music play" id="music">
+            <!--<audio src="audio/music.mp3" preload="auto" autoplay="true"></audio>-->
+        </div>
+    </div>
+    <canvas id="game" style="position: absolute;z-index: 3"></canvas>
+    <script src="js/game.js"></script>
+</body>
+</html>

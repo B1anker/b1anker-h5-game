@@ -17,14 +17,19 @@ section{
 }
 
 .bg-star{
-  background: url("../../images/star.png") no-repeat;
+  background: url("../images/star.png") no-repeat;
   background-size: cover;
   position: $psa;
   height: $prt;
   width: $prt;
 }
 
-.bg-page1{
+.bg-game{
+  @extend .bg-star;
+  background: url("../images/star-game.png") no-repeat;
+}
+
+.bg-page-1{
   width: 428px;
   height: 428px;
   border: 1px solid rgb(35, 60, 101);
@@ -47,26 +52,26 @@ section{
   @include center(428px, 428px);
   .rocket{
     @include opacity(0);
-    @include set-main-page-1(165px, 195px, "../../images/rocket.png", -29px, 48px);
+    @include set-main-page-1(165px, 195px, "../images/rocket-1.png", -29px, 48px);
   }
   .thanks{
     @include opacity(0);
-    @include set-main-page-1(396px, 227px, "../../images/thanks-2.png", 43px, 48px);
+    @include set-main-page-1(396px, 227px, "../images/thanks.png", 43px, 48px);
   }
   .withyou{
     @include opacity(0);
-    @include set-main-page-1(365px, 133px, "../../images/withyou.png", 208px, 38px);
+    @include set-main-page-1(365px, 133px, "../images/withyou.png", 208px, 38px);
   }
-  .text-1{
+  .text{
     @include opacity(0);
-    @include set-main-page-1(192px, 83px, "../../images/text-1.png", -7px, 209px);
+    @include set-main-page-1(192px, 83px, "../images/miaov.png", -7px, 209px);
   }
 }
 
 .arrow{
   width: 90px;
   height: 65px;
-  background: url("../../images/arrow.png") no-repeat;
+  background: url("../images/arrow.png") no-repeat;
   position: $psa;
   @include horizon-center(90px);
   bottom: 40px;
@@ -85,22 +90,107 @@ section{
   .withyou{
     @include animation(withyou 1s forwards);
   }
-  .text-1{
+  .text{
     @include animation(text 1s 1s forwards);
   }
 }
 
-.section-out .main-page-1{
-  .rocket{
-    @include animation(rocket 1s forwards);
+.section-out {
+  .bg-page-1 {
+    @include animation(circle-out 1s forwards);
   }
-  .thanks{
-    @include animation(thanks 1s forwards);
+  .bg-star {
+    @include animation(star-out 1s forwards);
   }
-  .withyou{
-    @include animation(withyou 1s);
+  .main-page-1 {
+    .rocket {
+      @include animation(rocket-out 1s forwards);
+    }
+    .thanks {
+      @include opacity(1);
+      @include animation(thanks-out 1s 0.5s forwards);
+    }
+    .withyou {
+      @include opacity(1);
+      @include animation(withyou-out 1s 0.3s forwards);
+    }
+    .text {
+      @include animation(text-out 1s forwards);
+    }
+
   }
-  .text-1{
-    @include animation(text 1s 1s forwards);
+}
+
+
+.music{
+  width: 50px;
+  height: 47px;
+  position: $psa;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9;
+}
+
+.play{
+  background: url("../images/music-play.png") no-repeat;
+  @include animation(music 2s infinite);
+  @include animation-timing-function(linear);
+}
+
+.stop{
+  background: url("../images/music-stop.png") no-repeat;
+}
+
+.loading{
+  $color:#4091dc;
+  width: 464px;
+  height:28px;
+  border: 1px solid $color;
+  @include border-radius(14px);
+  overflow: hidden;
+  position: $psa;
+  bottom: 119px;
+  left: 50%;
+  @include horizon-center(464px);
+  span{
+    width: 0;
+    height: 28px;
+    background-color: $color;
+    display: block;
   }
+}
+
+
+%bar-col{
+  height: 100%;
+  float: left;
+  line-height: 73px;
+  font-size: 30px;
+}
+
+.bar{
+  width: 100%;
+  height: 73px;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: $psa;
+  bottom: 0;
+}
+
+.score, .time{
+  @extend %bar-col;
+}
+
+.score{
+  width: 236px;
+  background: url("../images/monster-4.png") 23px 15px no-repeat;
+  background-size: 59px 51px;
+  color: #55B9f8;
+  text-indent: 82px;
+}
+
+.time{
+  width: 180px;
+  background: url("../images/time.png") 0px 16px  no-repeat;
+  color: #ffe400;
+  text-indent: 56px;
 }

@@ -209,7 +209,7 @@ section{
   display: none;
   z-index: 9999;
   @include center(424px, 489px);
-  .final-score,#again{
+  .final-score,#again,#begin{
     font-size: 40px;
     color: white;
     text-align: center;
@@ -217,7 +217,7 @@ section{
   .final-score{
     margin-top: 250px;
   }
-  #again{
+  #again,#begin{
     display: block;
     width: 90%;
     height: 50px;
@@ -227,4 +227,11 @@ section{
     @include border-radius(10px);
     @include box-shadow(0px 0px 8px rgba(90, 90, 90, 0.5));
   }
+  #begin{
+    margin-top: 300px;
+  }
+}
+
+.active{
+  display: block;
 }

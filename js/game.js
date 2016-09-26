@@ -222,7 +222,6 @@
 
 		self.gameOverTimer = setTimeout(function(){
 			clearInterval(self.timeTimer);
-			clearTimeout(self.gameOverTimer);
 			for(var a in monsters){
 				jc('#' + a).del();
 				monsters[a] = null;
